@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D _rigidbody2D;
+    [SerializeField] private Ball _ball;
 
     private float _xMovementValue;
     [SerializeField] private float _speed;
@@ -14,13 +15,16 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        // Get user input for horizontal movement
         _xMovementValue = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space) && _ball.State == BallState.Holded)
+        {
+            _ball.StartRolling();
+        }
     }
 
     void FixedUpdate()
     {
-        // Move player depending on user input (fixed update because a rigidbody is use)
         _rigidbody2D.MovePosition(transform.position + new Vector3(_xMovementValue, 0) * Time.deltaTime * _speed);
     }
 }

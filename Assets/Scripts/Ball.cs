@@ -10,31 +10,28 @@ public class Ball : MonoBehaviour
 
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _player;
+    private Rigidbody2D _rigidbody;
 
     void Start()
     {
         State = BallState.Holded;
-        Direction = new Vector2(1, 0);
+        Direction = Vector2.up;
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (State == BallState.Holded)
         {
             var playerPosition = _player.transform.position;
-            transform.position = new Vector2(playerPosition.x, playerPosition.y + 0.5f);
+            _rigidbody.position = new Vector2(playerPosition.x, playerPosition.y + 0.5f);
             return;
-        }
-
-        if (State == BallState.Rolling)
-        {
-            // Make ball rolling
-            transform.Translate(Speed * Time.deltaTime * Direction);
         }
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    public void StartRolling()
     {
-        // TODO
+        State = BallState.Rolling;
+        _rigidbody.AddForce(Speed * Direction);
     }
 }

@@ -707,6 +707,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5129909368847558834, guid: 98c7edf70d2794f71a8053b928c7ae28, type: 3}
   m_PrefabInstance: {fileID: 782336492}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &795517966 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -6333472384487803723, guid: 21650341225ac44aabe6535d66c43e66, type: 3}
+  m_PrefabInstance: {fileID: 5247855788805415938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 457e2af30ae39471db641f30dc952a3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &845171627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1314,6 +1325,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6333472384487803723, guid: 21650341225ac44aabe6535d66c43e66, type: 3}
+      propertyPath: _speed
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: -6333472384487803723, guid: 21650341225ac44aabe6535d66c43e66, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 645156056}
@@ -1374,6 +1389,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6431630252167272623, guid: 8686de2b1518741dcbb44810f15d28c8, type: 3}
+      propertyPath: m_Constraints
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189197311719511405, guid: 8686de2b1518741dcbb44810f15d28c8, type: 3}
+      propertyPath: _ball
+      value: 
+      objectReference: {fileID: 795517966}
     - target: {fileID: 8584808838958970284, guid: 8686de2b1518741dcbb44810f15d28c8, type: 3}
       propertyPath: m_Name
       value: Player
