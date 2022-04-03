@@ -6,7 +6,7 @@ public class Block : MonoBehaviour
     {
         if (collision.gameObject.name.ToLower().Trim().Contains("ball"))
         {
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
     }
 }

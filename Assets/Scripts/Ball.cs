@@ -6,7 +6,7 @@ public class Ball : MonoBehaviour
 {
     public BallState State { get; set; }
     public Vector2 Direction { get; set; }
-    public float Speed { get => _speed; set => Speed = value; }
+    public float Speed { get => _speed; set => _speed = value; }
 
     [SerializeField] private float _speed;
     [SerializeField] private GameObject _player;
@@ -14,9 +14,8 @@ public class Ball : MonoBehaviour
 
     void Start()
     {
-        State = BallState.Holded;
-        Direction = Vector2.up;
         _rigidbody = GetComponent<Rigidbody2D>();
+        SetInitialValues();
     }
 
     void FixedUpdate()
@@ -33,5 +32,12 @@ public class Ball : MonoBehaviour
     {
         State = BallState.Rolling;
         _rigidbody.AddForce(Speed * Direction);
+    }
+
+    public void SetInitialValues()
+    {
+        _rigidbody.velocity = Vector2.zero;
+        Direction = Vector2.up;
+        State = BallState.Holded;
     }
 }
